@@ -1,0 +1,4 @@
+aiohttp==3.7.4.post0
+aiohttp-cors==0.7.0
+aiohttp-middlewares==1.1.0
+gpiozero==1.6.2

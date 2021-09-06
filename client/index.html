@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Spin Coater</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="input-form">
+            <form action="/action_page.php" style="width: 50%;">
+                <label id="rpm_lbl">Current RPM: 0</label>
+                <br/>
+                <br/>
+                <label for="duration_ms">Duration (ms):</label><br>
+                <input class="input-box" type="number" id="duration_ms" name="duration_ms" value="10000" min="0" max="30000" step="1000"><br>
+                <br/>
+                <label for="rpm">Target RPM:</label><br>
+                <input class="input-box" type="number" id="rpm" name="rpm" value="400" min="0" max="6000" step="100"><br><br>
+            </form>
+        </div>
+
+        <button id="start-btn" type="button" class="start-btn">Begin LERP</button>
+
+        <script src="main.js"></script>
+    </body>
+</html>
