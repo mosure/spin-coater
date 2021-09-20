@@ -4,11 +4,15 @@ import time
 from aiohttp import web
 from aiohttp_middlewares import cors_middleware
 
+from gpiozero.pins.pigpio import PiGPIOFactory
 from gpiozero import Servo
 
 
 def current_milli_time():
     return round(time.time() * 1000)
+
+
+pin_factory = PiGPIOFactory()
 
 
 class MockServo:
@@ -22,7 +26,7 @@ class SpinCoater:
         self.estop = False
 
         try:
-            self.servo = Servo(gpio)
+            self.servo = Servo(gpio, pin_factory=pin_factory)
         except Exception as e:
             print(e)
             self.servo = MockServo()
